@@ -13,8 +13,8 @@ export class OwnerListComponent implements OnInit {
   public displayedColumns = ['name', 'dateOfBirth', 'address', 'details', 'update', 'delete'];
   public dataSource = new MatTableDataSource<Owner>();
 
-  @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: false }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
   constructor(private repoService: RepositoryService) { }
 
