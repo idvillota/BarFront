@@ -3,6 +3,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { RepositoryService } from 'src/app/shared/repository.service';
 import { OwnerForCreation } from 'src/app/_interface/OwnerForCreation';
+import { MatDialog } from '@angular/material';
+import { SuccessDialogComponent } from 'src/app/shared/dialogs/success-dialog/success-dialog.component';
+import { ErrorHandlerService } from 'src/app/shared/error-handler.service';
 
 @Component({
   selector: 'app-owner-create',
@@ -12,9 +15,11 @@ import { OwnerForCreation } from 'src/app/_interface/OwnerForCreation';
 export class OwnerCreateComponent implements OnInit {
 
   public ownerForm: FormGroup;
+  private dialogConfig;
 
-  constructor(private location: Location, private repository: RepositoryService){    
-   }
+  constructor(private location: Location, private repository: RepositoryService, private dialog: MatDialog, private errorService: ErrorHandlerService) {     
+  }
+
    
   ngOnInit() {
     this.ownerForm = new FormGroup({
@@ -22,7 +27,14 @@ export class OwnerCreateComponent implements OnInit {
       dateOfBirth: new FormControl(new Date()),
       address: new FormControl('', [Validators.required, Validators.maxLength(100)])
     });
-  }
+
+    this.dialogConfig = {
+      height: '200px',
+      width: '400px',
+      disableClose: true,
+      data: {}
+    }
+  }  
 
   public hasError = (controlName: string, errorName: string) => {
     return this.ownerForm.controls[controlName].hasError(errorName);
@@ -46,12 +58,19 @@ export class OwnerCreateComponent implements OnInit {
 
     let apiUrl = 'api/owner';
     this.repository.create(apiUrl, owner)
-      .subscribe(rest => {
+      .subscribe(res => {
+        //let dialogRef = this.dialog.open(SuccessDialogComponent, this.dialogConfig); 
+        //we are subscribing on the [mat-dialog-close] attribute as soon as we click on the dialog button
+        // dialogRef.afterClosed()
+        //   .subscribe(result => {
+        //     this.location.back();
+        //   });
         this.location.back();
       },
-      (error => {
-        this.location.back();
-      })
+        (error => {
+          this.errorService.dialogConfig = { ...this.dialogConfig };
+          this.errorService.handleError(error);
+        })
       )
   }
 

@@ -10,11 +10,13 @@ import { OwnerDetailsComponent } from './owner-details/owner-details.component';
 import { OwnerDataComponent } from './owner-details/owner-data/owner-data.component';
 import { AccountDataComponent } from './owner-details/account-data/account-data.component';
 import { OwnerCreateComponent } from './owner-create/owner-create.component';
+// import { SharedModule } from './../shared/shared.module';
 
 @NgModule({
   declarations: [OwnerListComponent, OwnerDetailsComponent, OwnerDataComponent, AccountDataComponent, OwnerCreateComponent],
   imports: [
     CommonModule,
+    // SharedModule,
     OwnerRoutingModule,
     MaterialModule,
     FlexLayoutModule,
