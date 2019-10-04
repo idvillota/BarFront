@@ -1,47 +1,51 @@
 <mat-toolbar color="primary">
-  <div fxHide.gt-xs>
-      <button mat-icon-button (click)="onToggleSidenav()">
-          <mat-icon>menu</mat-icon>
-      </button>
-  </div>
-  <div>
-      <a routerLink="/home"><mat-icon>local_bar</mat-icon></a>
-  </div>
-  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-      <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-          <li>
+    <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <div>
+        <a routerLink="/home">
+            <mat-icon>local_bar</mat-icon>
+        </a>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li>
                 <a routerLink="/owner/owners"><button mat-button>Owners</button></a>
-          </li>
-          <li>
-            <button mat-button [matMenuTriggerFor]="menuConfiguration">
-                Configuración
-            </button>
-            <mat-menu #menuConfiguration="matMenu">                
-                <button mat-menu-item>
-                    <mat-icon>local_bar</mat-icon>
-                    <span>Productos</span>
+            </li>
+            <li>
+                <button mat-button [matMenuTriggerFor]="menuConfiguration">
+                    Configuración
                 </button>
-                <button mat-menu-item>
-                    <mat-icon>kitchen</mat-icon>
-                    <span>Ingredientes</span>
+                <mat-menu #menuConfiguration="matMenu">
+                    <a routerLink="/product/products">
+                        <button mat-menu-item>
+                            <mat-icon>local_bar</mat-icon>
+                            <span>Productos</span>
+                        </button>
+                    </a>
+                    <button mat-menu-item>
+                        <mat-icon>kitchen</mat-icon>
+                        <span>Ingredientes</span>
+                    </button>
+                </mat-menu>
+            </li>
+            <li>
+                <button mat-icon-button [matMenuTriggerFor]="menuAccount">
+                    <mat-icon>account_circle</mat-icon>
                 </button>
-            </mat-menu>
-          </li>
-          <li>
-            <button mat-icon-button [matMenuTriggerFor]="menuAccount">
-                <mat-icon>account_circle</mat-icon>
-            </button>
-            <mat-menu #menuAccount="matMenu">                
-                <button mat-menu-item>
-                    <mat-icon>build</mat-icon>
-                    <span>Configuración Cuenta</span>
-                </button>
-                <button mat-menu-item>
-                    <mat-icon>exit_to_app</mat-icon>
-                    <span>Cerrar Sesión</span>
-                </button>
-            </mat-menu>
-          </li>
-      </ul>
-  </div>
+                <mat-menu #menuAccount="matMenu">
+                    <button mat-menu-item>
+                        <mat-icon>build</mat-icon>
+                        <span>Configuración Cuenta</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>exit_to_app</mat-icon>
+                        <span>Cerrar Sesión</span>
+                    </button>
+                </mat-menu>
+            </li>
+        </ul>
+    </div>
 </mat-toolbar>

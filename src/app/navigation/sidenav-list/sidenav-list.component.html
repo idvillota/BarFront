@@ -3,22 +3,24 @@
         <mat-icon>home</mat-icon> <span class="nav-caption">Home</span>
     </a>
     <a mat-list-item routerLink="/owner" (click)="onSidenavClose()">
-        <mat-icon>assignment_ind</mat-icon> <span class="nav-caption">Owner Actions</span>   
+        <mat-icon>assignment_ind</mat-icon> <span class="nav-caption">Owner Actions</span>
     </a>
     <mat-list-item [matMenuTriggerFor]="menuConfiguration">
-            <mat-icon>reorder</mat-icon>
-            <a matline>Configuración</a>
-        </mat-list-item>
-    <mat-menu #menuConfiguration="matMenu">                
+        <mat-icon>reorder</mat-icon>
+        <a matline>Configuración</a>
+    </mat-list-item>
+    <mat-menu #menuConfiguration="matMenu">
+        <a routerLink="/product/products">
             <button mat-menu-item>
                 <mat-icon>local_bar</mat-icon>
                 <span>Productos</span>
             </button>
-            <button mat-menu-item>
-                <mat-icon>kitchen</mat-icon>
-                <span>Ingredientes</span>
-            </button>
-        </mat-menu>    
+        </a>
+        <button mat-menu-item>
+            <mat-icon>kitchen</mat-icon>
+            <span>Ingredientes</span>
+        </button>
+    </mat-menu>
     <mat-list-item [matMenuTriggerFor]="menuAccount">
         <mat-icon>account_circle</mat-icon>
         <a matline>Ivan Dario</a>
