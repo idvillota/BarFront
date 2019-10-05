@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
+import { MatDialog } from '@angular/material';
+
 import { RepositoryService } from 'src/app/shared/repository.service';
 import { OwnerForCreation } from 'src/app/_interface/OwnerForCreation';
-import { MatDialog } from '@angular/material';
-import { SuccessDialogComponent } from 'src/app/shared/dialogs/success-dialog/success-dialog.component';
+// import { SuccessDialogComponent } from 'src/app/shared/dialogs/success-dialog/success-dialog.component';
 import { ErrorHandlerService } from 'src/app/shared/error-handler.service';
 
 @Component({
@@ -17,7 +18,10 @@ export class OwnerCreateComponent implements OnInit {
   public ownerForm: FormGroup;
   private dialogConfig;
 
-  constructor(private location: Location, private repository: RepositoryService, private dialog: MatDialog, private errorService: ErrorHandlerService) {     
+  constructor(private location: Location, 
+              private repository: RepositoryService, 
+              private dialog: MatDialog, 
+              private errorService: ErrorHandlerService) {     
   }
 
    

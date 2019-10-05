@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { Router } from '@angular/router';
+
 import { Owner } from '../../_interface/owner.model';
 import { RepositoryService } from './../../shared/repository.service';
 import { ErrorHandlerService } from '../../shared/error-handler.service';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-owner-list',

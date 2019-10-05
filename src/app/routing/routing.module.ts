@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+
 import { HomeComponent } from '../home/home.component';
 import { NotFoundComponent } from '../error-pages/not-found/not-found.component';
 import { ServerErrorComponent } from '../error-pages/server-error/server-error.component';
-import { OwnerListComponent } from '../owner/owner-list/owner-list.component';
 
 const routes: Routes = [
   
