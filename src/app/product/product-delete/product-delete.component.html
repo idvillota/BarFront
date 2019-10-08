@@ -1,0 +1,23 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+    <mat-card fxFlex="500px" fxFlex.xs="100%">
+        <mat-card-title>Product to Delete</mat-card-title>
+        <mat-card-content>
+          <div fxLayout="column wrap" fxLayoutGap="40px">
+            <div fxLayout="row wrap" fxFlex>
+              <div fxFlex><strong>Name:</strong>{{product?.name}}</div>
+            </div>
+      
+            <div fxLayout="row wrap" fxFlex>
+              <div fxFlex><strong>Description:</strong>{{product?.description}}</div>
+            </div>      
+            
+            <div fxLayout="row wrap" fxFlex>
+                <div fxFlex><button type="submit" class="btn btn-info" (click)="deleteProduct()">Delete</button></div>
+                <div fxFlex><button type="button" class="btn btn-danger" (click)="redirectToProductList()">Cancel</button></div>
+            </div>
+
+          </div>
+        </mat-card-content>        
+      </mat-card>
+</section>
+    

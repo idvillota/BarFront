@@ -14,7 +14,7 @@ import { ErrorHandlerService } from '../../shared/error-handler.service';
 })
 export class ProductListComponent implements OnInit {
 
-  public displayedColumns = ['name', 'description', 'costPrice', 'salePrice',  'quantity'];
+  public displayedColumns = ['name', 'description', 'costPrice', 'salePrice',  'quantity', 'update', 'delete'];
   public dataSource = new MatTableDataSource<Product>();
 
   @ViewChild(MatSort, { static: false }) sort: MatSort;
@@ -46,5 +46,21 @@ export class ProductListComponent implements OnInit {
         this.errorService.handleError(error);
       })
   }
+
+  // public redirectToDetails = (id: string) => {    
+  //   let url: string = `/owner/details/${id}`;
+  //   this.router.navigate([url]);
+  //}
+
+  public redirectToUpdate = (id: string) => {
+    let url: string = `/product/update/${id}`;
+    this.router.navigate([url]);
+  }
+
+  public redirectToDelete = (id: string) => {    
+    let deleteUrl: string = `/product/delete/${id}`;
+    this.router.navigate([deleteUrl]);
+  }
+
 
 }
