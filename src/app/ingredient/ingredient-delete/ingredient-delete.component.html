@@ -1,0 +1,28 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+    <mat-card fxFlex="500px" fxFlex.xs="100%">
+        <mat-card-title>Ingredient to Delete</mat-card-title>
+        <mat-card-content>
+          <div fxLayout="column wrap" fxLayoutGap="40px">
+            <div fxLayout="row wrap" fxFlex>
+              <div fxFlex><strong>Name:</strong>{{ingredient?.name}}</div>
+            </div>
+      
+            <div fxLayout="row wrap" fxFlex>
+              <div fxFlex><strong>Quantity:</strong>{{ingredient?.quantity}}</div>
+            </div>      
+
+            <div fxLayout="row wrap" fxFlex>
+                <div fxFlex><strong>Value:</strong>{{ingredient?.value}}</div>
+              </div>      
+            
+            <div fxLayout="row wrap" fxFlex>
+                <div fxFlex><button type="submit" class="btn btn-info" (click)="deleteIngredient()">Delete</button></div>
+                <div fxFlex><button type="button" class="btn btn-danger" (click)="redirectToIngredientList()">Cancel</button></div>
+            </div>
+
+          </div>
+        </mat-card-content>        
+      </mat-card>
+</section>
+    
+

@@ -8,9 +8,10 @@ import { MaterialModule } from './../material/material.module';
 import { IngredientListComponent } from './ingredient-list/ingredient-list.component';
 import { IngredientCreateComponent } from './ingredient-create/ingredient-create.component';
 import { IngredientUpdateComponent } from './ingredient-update/ingredient-update.component';
+import { IngredientDeleteComponent } from './ingredient-delete/ingredient-delete.component';
 
 @NgModule({
-  declarations: [ IngredientListComponent, IngredientCreateComponent, IngredientUpdateComponent ],
+  declarations: [ IngredientListComponent, IngredientCreateComponent, IngredientUpdateComponent, IngredientDeleteComponent ],
   imports: [
     CommonModule,
     IngredientRoutingModule,
