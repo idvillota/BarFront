@@ -1,0 +1,38 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+    <form [formGroup]="ingredientForm" autocomplete="off" novalidate (ngSubmit)="updateIngredient(ingredientForm.value)"
+        fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <mat-card fxFlex="500px" fxFlex.xs="100%">
+            <mat-card-title>Update an Ingredient</mat-card-title>
+            <mat-card-content>
+
+                <mat-form-field>
+                    <input matInput type="text" [hidden]="true" formControlName="id" id="id">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Ingredient's name" formControlName="name" id="name">
+                    <mat-hint align="end">Not more then 60 characters long.</mat-hint>
+                    <mat-error *ngIf="ingredientForm.controls['name'].hasError('required')">Name is required</mat-error>
+                    <mat-error *ngIf="ingredientForm.controls['name'].hasError('maxlength')">Name is required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Ingredient's value price" formControlName="value"
+                        id="value">
+                    <mat-error *ngIf="ingredientForm.controls['value'].hasError('required')">Value is required
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Ingredient's quantity" formControlName="quantity" id="quantity">
+                    <mat-error *ngIf="ingredientForm.controls['quantity'].hasError('required')">Quantity is required
+                    </mat-error>
+                </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions align="center">
+                <button mat-raised-button color="primary" [disabled]="!ingredientForm.valid">Update</button>
+                <button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</section>

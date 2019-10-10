@@ -7,9 +7,10 @@ import { IngredientRoutingModule } from './ingredient-routing/ingredient-routing
 import { MaterialModule } from './../material/material.module';
 import { IngredientListComponent } from './ingredient-list/ingredient-list.component';
 import { IngredientCreateComponent } from './ingredient-create/ingredient-create.component';
+import { IngredientUpdateComponent } from './ingredient-update/ingredient-update.component';
 
 @NgModule({
-  declarations: [ IngredientListComponent, IngredientCreateComponent ],
+  declarations: [ IngredientListComponent, IngredientCreateComponent, IngredientUpdateComponent ],
   imports: [
     CommonModule,
     IngredientRoutingModule,

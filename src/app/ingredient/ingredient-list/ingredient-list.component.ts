@@ -13,7 +13,7 @@ import { ErrorHandlerService } from './../../shared/error-handler.service';
 })
 export class IngredientListComponent implements OnInit {
 
-  public displayedColumns = ['name', 'quantity', 'value']
+  public displayedColumns = ['name', 'quantity', 'value', 'update', 'delete']
   public dataSource = new MatTableDataSource<Ingredient>();
 
   @ViewChild(MatSort, { static: false }) sort: MatSort;
