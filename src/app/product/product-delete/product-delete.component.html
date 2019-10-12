@@ -14,14 +14,13 @@
             <div fxLayout="row wrap">
                 <div fxFlex><strong></strong></div>
             </div>
-            
-            <div fxLayout="row wrap" fxFlex>
-                <div fxFlex><button type="submit" class="btn btn-info" (click)="deleteProduct()">Delete</button></div>
-                <div fxFlex><button type="button" class="btn btn-danger" (click)="redirectToProductList()">Cancel</button></div>
-            </div>
 
           </div>
-        </mat-card-content>        
+        </mat-card-content> 
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="deleteProduct()">Delete</button>
+          <button type="button" mat-raised-button color="warn" class="btn btn-danger" (click)="redirectToProductList()">Cancel</button>
+        </mat-card-actions>       
       </mat-card>
 </section>
     
