@@ -1,0 +1,33 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+        <form [formGroup]="paymentForm" autocomplete="off" novalidate (ngSubmit)="createPayment(paymentForm.value)" fxLayout="column wrap"
+        fxLayoutAlign="center center" fxLayoutGap="10px">
+        <mat-card fxFlex="500px" fxFlex.xs="100%">
+            <mat-card-title>Create a new Payment</mat-card-title>
+            <mat-card-content>
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Payment's number" formControlName="number" id="number">
+                    <!-- <mat-hint align="end">Not more then 60 characters long.</mat-hint> -->
+                    <!-- <mat-error *ngIf="hasError('number', 'required')">Number is required</mat-error> -->
+                  </mat-form-field>
+                   
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="date" id="date" 
+                        readonly (click)="picker.open()">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                   
+                  <mat-form-field>
+                    <input matInput type="text" placeholder="Payment Total" formControlName="total" id = "total">
+                    <!-- <mat-hint align="end">Not more then 100 characters long.</mat-hint> -->
+                    <!-- <mat-error *ngIf="hasError('address', 'required')">Total is required</mat-error> -->
+                  </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions align="center">
+                <button mat-raised-button color="primary" [disabled]="!paymentForm.valid">Create</button>
+                <button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+              </mat-card-actions>
+        </mat-card>
+      </form>
+    </section>
+    

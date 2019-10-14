@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'owner', loadChildren: "./../owner/owner.module#OwnerModule" },
   { path: 'product', loadChildren: "./../product/product.module#ProductModule" },
   { path: 'ingredient', loadChildren: './../ingredient/ingredient.module#IngredientModule' },
+  { path: 'payment', loadChildren: "./../payment/payment.module#PaymentModule" },
   { path: '404', component: NotFoundComponent}, 
   { path: '500', component: ServerErrorComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },

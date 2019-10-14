@@ -20,12 +20,4 @@ import { IngredientDeleteComponent } from './ingredient-delete/ingredient-delete
     ReactiveFormsModule
   ]
 })
-
-
-@NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
-})
 export class IngredientModule { }
