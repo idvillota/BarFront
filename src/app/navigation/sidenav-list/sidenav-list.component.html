@@ -5,6 +5,12 @@
     <a mat-list-item routerLink="/payment" (click)="onSidenavClose()">
         <mat-icon>credit_card</mat-icon> <span class="nav-caption">Payments</span>
     </a>
+    <a mat-list-item routerLink="/order" (click)="onSidenavClose()">
+        <mat-icon>credit_card</mat-icon><span class="nav-caption">Orders</span>    
+    </a>
+    <a mat-list-item routerLink="/client" (click)="onSidenavClose()">
+        <mat-icon>credit_card</mat-icon><span class="nav-caption">Clients</span>
+    </a>
     <mat-list-item [matMenuTriggerFor]="menuConfiguration">
         <mat-icon>reorder</mat-icon>
         <a matline>Configuración</a>
@@ -14,7 +20,7 @@
             <button mat-menu-item>
                 <mat-icon>local_bar</mat-icon>
                 <span>Productos</span>
-            </button>
+            </button> 
         </a>
 
         <a routerLink="/ingredient/ingredients">
