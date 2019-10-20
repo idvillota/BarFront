@@ -5,6 +5,7 @@ import { RepositoryService } from 'src/app/shared/repository.service';
 import { MatDialog } from '@angular/material';
 import { ErrorHandlerService } from 'src/app/shared/error-handler.service';
 import { IngredientForCreation } from 'src/app/_interface/ingredientForCreation';
+import { SuccessDialogComponent } from 'src/app/shared/dialogs/success-dialog/success-dialog.component';
 
 @Component({
   selector: 'app-ingredient-create',
@@ -59,7 +60,12 @@ export class IngredientCreateComponent implements OnInit {
     let apiUrl = 'api/ingredient';
     this.repository.create(apiUrl, ingredient)
       .subscribe(res => {
-        this.location.back();
+          let dialogRef = this.dialog.open(SuccessDialogComponent, this.dialogConfig); 
+        //we are subscribing on the [mat-dialog-close] attribute as soon as we click on the dialog button
+        dialogRef.afterClosed()
+          .subscribe(result => {
+            this.location.back();
+          });
       },
       (error => {
         this.errorService.dialogConfig = {...this.dialogConfig};

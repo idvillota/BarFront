@@ -9,6 +9,7 @@ import { IngredientListComponent } from './ingredient-list/ingredient-list.compo
 import { IngredientCreateComponent } from './ingredient-create/ingredient-create.component';
 import { IngredientUpdateComponent } from './ingredient-update/ingredient-update.component';
 import { IngredientDeleteComponent } from './ingredient-delete/ingredient-delete.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [ IngredientListComponent, IngredientCreateComponent, IngredientUpdateComponent, IngredientDeleteComponent ],
@@ -17,7 +18,8 @@ import { IngredientDeleteComponent } from './ingredient-delete/ingredient-delete
     IngredientRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
   ]
-})
+}) 
 export class IngredientModule { }

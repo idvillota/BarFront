@@ -6,8 +6,7 @@ import { HomeComponent } from '../home/home.component';
 import { NotFoundComponent } from '../error-pages/not-found/not-found.component';
 import { ServerErrorComponent } from '../error-pages/server-error/server-error.component';
 
-const routes: Routes = [
-  
+const routes: Routes = [  
   { path: 'home', component: HomeComponent},
   { path: 'owner', loadChildren: "./../owner/owner.module#OwnerModule" },
   { path: 'product', loadChildren: "./../product/product.module#ProductModule" },

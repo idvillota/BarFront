@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 import { MatDialog } from '@angular/material';
 
 import { RepositoryService } from 'src/app/shared/repository.service';
-import { OwnerForCreation } from 'src/app/_interface/OwnerForCreation';
+import { OwnerForCreation } from 'src/app/_interface/ownerForCreation';
 // import { SuccessDialogComponent } from 'src/app/shared/dialogs/success-dialog/success-dialog.component';
 import { ErrorHandlerService } from 'src/app/shared/error-handler.service';
 

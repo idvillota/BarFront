@@ -5,6 +5,7 @@ import { RepositoryService } from 'src/app/shared/repository.service';
 import { MatDialog } from '@angular/material';
 import { ErrorHandlerService } from 'src/app/shared/error-handler.service';
 import { ClientForCreation } from 'src/app/_interface/clientForCreation';
+import { SuccessDialogComponent } from 'src/app/shared/dialogs/success-dialog/success-dialog.component';
 
 @Component({
   selector: 'app-client-create',

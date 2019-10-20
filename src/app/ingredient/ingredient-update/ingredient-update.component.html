@@ -5,15 +5,14 @@
             <mat-card-title>Update an Ingredient</mat-card-title>
             <mat-card-content>
 
-                <mat-form-field>
-                    <input matInput type="text" [hidden]="true" formControlName="id" id="id">
-                </mat-form-field>
+                <input matInput type="text" [hidden]="true" formControlName="id" id="id">
 
                 <mat-form-field>
                     <input matInput type="text" placeholder="Ingredient's name" formControlName="name" id="name">
                     <mat-hint align="end">Not more then 60 characters long.</mat-hint>
                     <mat-error *ngIf="ingredientForm.controls['name'].hasError('required')">Name is required</mat-error>
-                    <mat-error *ngIf="ingredientForm.controls['name'].hasError('maxlength')">Name is required</mat-error>
+                    <mat-error *ngIf="ingredientForm.controls['name'].hasError('maxlength')">Name is required
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field>
@@ -24,7 +23,8 @@
                 </mat-form-field>
 
                 <mat-form-field>
-                    <input matInput type="text" placeholder="Ingredient's quantity" formControlName="quantity" id="quantity">
+                    <input matInput type="text" placeholder="Ingredient's quantity" formControlName="quantity"
+                        id="quantity">
                     <mat-error *ngIf="ingredientForm.controls['quantity'].hasError('required')">Quantity is required
                     </mat-error>
                 </mat-form-field>

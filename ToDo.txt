@@ -1,0 +1,4 @@
+Task                                            Status
+- Review the operation result                   Done
+- Uniform the same style for all views.
+- Review the CRUD for all entities.
