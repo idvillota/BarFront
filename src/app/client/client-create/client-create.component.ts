@@ -37,7 +37,7 @@ export class ClientCreateComponent implements OnInit {
       height: '200px',
       width: '400px',
       disableClose: true,
-      data: {}
+      data: { title: 'Create Client', body: 'Client succesfully created!' }
     }
   }
 

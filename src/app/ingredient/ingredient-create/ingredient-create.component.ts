@@ -33,7 +33,7 @@ export class IngredientCreateComponent implements OnInit {
       height: '200px',
       width: '400px',
       disableClose: true,
-      data: {}
+      data: { title: 'Create Ingredient', body: 'Ingredient succesfully created!' }
     }
   }
 

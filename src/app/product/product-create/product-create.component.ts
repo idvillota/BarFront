@@ -37,7 +37,7 @@ export class ProductCreateComponent implements OnInit {
       height: '200px',
       width: '400px',
       disableClose: true,
-      data: {}
+      data: { title: 'Create Product', body: 'Product succesfully created!' }
     }
   }
 
