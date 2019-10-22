@@ -9,6 +9,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductCreateComponent } from './product-create/product-create.component';
 import { ProductUpdateComponent } from './product-update/product-update.component';
 import { ProductDeleteComponent } from './product-delete/product-delete.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [ProductListComponent, ProductCreateComponent, ProductUpdateComponent, ProductDeleteComponent],
@@ -17,7 +18,8 @@ import { ProductDeleteComponent } from './product-delete/product-delete.componen
     ProductRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
   ]
 })
 export class ProductModule { }

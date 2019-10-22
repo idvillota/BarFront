@@ -9,6 +9,7 @@ import { ClientListComponent } from './client-list/client-list.component';
 import { ClientCreateComponent } from './client-create/client-create.component';
 import { ClientUpdateComponent } from './client-update/client-update.component';
 import { ClientDeleteComponent } from './client-delete/client-delete.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [ClientListComponent, ClientCreateComponent, ClientUpdateComponent, ClientDeleteComponent],
@@ -17,7 +18,8 @@ import { ClientDeleteComponent } from './client-delete/client-delete.component';
     ClientRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
   ]
 })
 export class ClientModule { }

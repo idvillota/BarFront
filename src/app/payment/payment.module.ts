@@ -7,6 +7,7 @@ import { PaymentRoutingModule } from './payment-routing/payment-routing.module';
 import { PaymentListComponent } from './payment-list/payment-list.component';
 import { PaymentCreateComponent } from './payment-create/payment-create.component';
 import { MaterialModule } from '../material/material.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [PaymentListComponent, PaymentCreateComponent],
@@ -15,7 +16,8 @@ import { MaterialModule } from '../material/material.module';
     PaymentRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
   ]
 })
 export class PaymentModule { }

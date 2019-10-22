@@ -68,13 +68,12 @@ export class ClientCreateComponent implements OnInit {
     let apiUrl = 'api/client';
     this.repository.create(apiUrl, client)
       .subscribe(res => {
-        //let dialogRef = this.dialog.open(SuccessDialogComponent, this.dialogConfig); 
+        let dialogRef = this.dialog.open(SuccessDialogComponent, this.dialogConfig); 
         //we are subscribing on the [mat-dialog-close] attribute as soon as we click on the dialog button
-        // dialogRef.afterClosed()
-        //   .subscribe(result => {
-        //     this.location.back();
-        //   });
-        this.location.back();
+        dialogRef.afterClosed()
+          .subscribe(result => {
+            this.location.back();
+          });
       },
         (error => {
           this.errorService.dialogConfig = { ...this.dialogConfig };
